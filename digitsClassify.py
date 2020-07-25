@@ -20,7 +20,7 @@ screen = pygame.display.set_mode(size)
 font = pygame.font.Font('freesansbold.ttf', 32) 
 
 # model
-filename = "mnist_model"
+filename = "mnist_model_mlp.sav"
 with open(filename, 'rb') as f:
 	model = pickle.load(f)
 
@@ -60,7 +60,7 @@ class Canvas:
 						if self.cells[y+a][x+b] < 100:
 							self.cells[y+a][x+b] = 100
 					except: pass
-
+			
 		# draw border of canvas
 		canvas_width = self.res * self.cell_size
 		pygame.draw.line(screen, white, (0, canvas_width), (canvas_width, canvas_width), 3)
